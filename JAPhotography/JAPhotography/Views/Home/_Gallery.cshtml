@@ -1,0 +1,11 @@
+﻿@if (!(Model.Thumbnails == null))
+{
+    <div id="thumbnail_gallery" class="justified-gallery">
+        @foreach (var image in Model.Thumbnails)
+        {
+            <a href="#" class="darken">
+                <img src="@Url.Content(image)" alt="" />
+            </a>
+        }
+    </div>
+}

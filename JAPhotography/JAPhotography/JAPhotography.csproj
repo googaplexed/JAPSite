@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A926392B-D07F-47E3-B1F4-F95BD9C7E46F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JAPhotography</RootNamespace>
+    <AssemblyName>JAPhotography</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DirImagesModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\gallery\birdwater.jpg" />
+    <Content Include="Content\Images\gallery\logansunset.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_0086.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_0213.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_0220.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_0281.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_0321.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_0632.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_0952.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_2079.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_2460.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_2788.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_2920.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_3503.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_3615.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_3626.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_3643.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_3689.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_4078.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_4090.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_4204.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_4348.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_4369.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_4387.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_4489.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_4852 copy.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_4929.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_4952.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_4960q.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_5634.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_6154.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_6362bw.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_6441.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_6677.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_6719.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_6761.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_6768.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_6950.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_7037bw.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_7065.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_7177.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_7215.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_7961.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_7995.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_8053.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_8131.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_8235.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_8270.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_8373.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_8441.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_8472.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_8474.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_8824.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_8973.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_9041.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_9097.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_9137.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_9145.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_9406.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_9422.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_9533.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_9546.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_9554.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_9643.jpg" />
+    <Content Include="Content\Images\Go Through\IMG_9751.jpg" />
+    <Content Include="Content\Images\Go Through\Untitled-1.jpg" />
+    <Content Include="Content\Images\Go Through\vintage2.jpg" />
+    <Content Include="Content\Images\icons\ajax-loader.GIF" />
+    <Content Include="Content\Images\icons\facebook-icon.png" />
+    <Content Include="Content\Images\icons\fullscreen.png" />
+    <Content Include="Content\Images\icons\kitten_gif.gif" />
+    <Content Include="Content\Images\icons\kitten_sad_gif.gif" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\thumbs\birdwater_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_0086_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_0213_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_0220_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_0281_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_0321_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_0632_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_0952_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_2079_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_2460_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_2788_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_2920_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_3503_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_3615_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_3626_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_3643_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_3689_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_4078_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_4090_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_4204_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_4348_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_4369_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_4387_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_4489_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_4852 copy_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_4929_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_4952_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_4960q_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_5634_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_6154_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\IMG_6362bw_thumb.jpg" />
+    <Content Include="Content\Images\thumbs\logansunset_thumb.jpg" />
+    <Content Include="Content\Images\watermark.png" />
+    <Content Include="Content\justifiedGallery.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\basescript.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.justifiedGallery.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\_Gallery.cshtml" />
+    <Content Include="Views\Home\_Landing.cshtml" />
+    <Content Include="Views\Home\_Investment.cshtml" />
+    <Content Include="Views\Home\_Contact.cshtml" />
+    <Content Include="Views\Home\_Error.cshtml" />
+    <Content Include="Views\Home\_About.cshtml" />
+    <Content Include="Views\Home\_ContactForm.cshtml" />
+    <Content Include="Views\Home\_ContactSuccess.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62462</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62462/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

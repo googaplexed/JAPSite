@@ -1,0 +1,159 @@
+﻿html {
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body
+{
+    padding: 55px 55px 0px 55px;
+}
+
+a
+{
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    display:block;
+    border: none;
+    outline: none;   
+    border-radius: 0px;
+    text-decoration: none;
+
+    transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+}
+
+a:hover
+{
+    text-decoration: none;
+    filter: alpha(opacity=100);
+    opacity: 1.0;
+    background-color: transparent;
+}
+
+a:visited, a:active, a:link
+{
+    text-decoration: none;
+}
+
+footer
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family: 'Montserrat Hairline', Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: black;
+    color: white;
+    height: 60px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    /*max-width: 280px;*/
+}
+
+.row
+{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.navbar
+{
+    background-color:transparent;
+    border: none;
+}
+
+.navbar li
+{
+    margin-right: 60px;
+}
+
+.navbar li a
+{
+    font-size: 18px;
+    font-weight: bold;    
+    text-transform: uppercase;
+    color: #000000;
+    /*text-shadow: rgba(0,0,0,0.8) 1px 1px 2px;*/        
+}
+
+.navbar li a:hover
+{
+    
+
+}
+
+.navbar li a:active, .navbar li a:visited, .navbar li a:focus
+{
+    background-color: transparent;
+}
+
+.logo img
+{
+    margin: 5px 0 0 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    width: 45%;
+    height: 45%;
+}
+
+/*.gallery-thumbs
+{
+    padding-left: 0px;
+}
+
+.gallery-thumbs div
+{
+    padding: 5px;
+}*/
+
+/*.gallery-thumbs div img
+{
+    height: 250px;
+    width: auto;    
+}*/
+
+.darken
+{
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+}
+
+.darken:hover 
+{
+    -webkit-filter:grayscale(100%);
+    box-shadow: 5px 5px 1px grey;
+}
+
+#MainContainer
+{
+    margin-bottom: 65px;
+}
