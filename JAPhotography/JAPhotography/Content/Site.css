@@ -1,4 +1,21 @@
-﻿html {
+﻿::-webkit-scrollbar
+{
+    width: 12px;
+}
+
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+html {
     font-family: Montserrat, Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
@@ -153,7 +170,13 @@ textarea {
     box-shadow: 5px 5px 1px grey;
 }
 
+.main-content
+{
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
 #MainContainer
 {
-    margin-bottom: 65px;
+    margin-bottom: 10px;
 }
