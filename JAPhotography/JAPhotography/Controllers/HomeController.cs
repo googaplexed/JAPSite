@@ -18,8 +18,8 @@ namespace JAPhotography.Controllers
         {
             DirImagesModel dim = new DirImagesModel()
             {
-                Thumbnails = Directory.EnumerateFiles(Server.MapPath("~/Content/images/thumbs")).Select(fn => "~/content/images/thumbs/" + Path.GetFileName(fn)),
-                Images = Directory.EnumerateFiles(Server.MapPath("~/Content/images/gallery")).Select(fn => "~/Content/images/gallery/" + Path.GetFileName(fn))
+                Thumbnails = Directory.EnumerateFiles(Server.MapPath("~/Content/images/thumbs")).Select(fn => "~/content/images/thumbs/" + Path.GetFileName(fn)).ToList(),
+                Images = Directory.EnumerateFiles(Server.MapPath("~/Content/images/gallery")).Select(fn => "~/Content/images/gallery/" + Path.GetFileName(fn)).ToList()
             };
 
             return dim;

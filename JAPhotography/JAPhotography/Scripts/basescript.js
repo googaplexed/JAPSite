@@ -39,6 +39,8 @@ $(document).ready(function () {
         //e.preventDefault();
         SendEmail();
     });
+
+    $("#thumbnail_gallery a").attr("href");
 });
 
 function ShowLoadingImage()

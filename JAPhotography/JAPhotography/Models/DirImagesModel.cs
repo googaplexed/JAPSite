@@ -10,9 +10,9 @@ namespace JAPhotography.Models
     {
         public int ID { get; set; }
 
-        public string ImageURL { get; set; }
+        //public string ImageURL { get; set; }
 
-        public IEnumerable<string> Thumbnails { get; set; }
-        public IEnumerable<string> Images { get; set; }
+        public List<string> Thumbnails { get; set; }
+        public List<string> Images { get; set; }
     }
 }

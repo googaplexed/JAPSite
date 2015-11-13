@@ -1,10 +1,12 @@
-﻿@if (!(Model.Thumbnails == null))
+﻿@model JAPhotography.Models.DirImagesModel
+
+@if (!(Model.Thumbnails == null && Model.Images == null))
 {
     <div id="thumbnail_gallery" class="justified-gallery">
-        @foreach (var image in Model.Thumbnails)
+        @for (int i = 0; i < Model.Thumbnails.Count(); i++)
         {
-            <a href="#" class="darken">
-                <img src="@Url.Content(image)" alt="" />
+            <a href="@Url.Content(Model.Images[i])" class="darken">
+                <img src="@Url.Content(Model.Thumbnails[i])" alt="" />
             </a>
         }
     </div>
