@@ -158,3 +158,8 @@ function SendEmail() {
         }
     });
 };
+
+function ResetContactForm()
+{
+    $(".form-control").val("");
+}

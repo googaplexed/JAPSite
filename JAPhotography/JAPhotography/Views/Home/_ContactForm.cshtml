@@ -19,7 +19,7 @@
         <label class="control-label" for="message">Message</label>
         <textarea type="text" name="message" placeholder="Message" size="80" class="form-control" id="message" rows="10"></textarea>
     </div>
-    <input type="button" class="btn btn-lg btn-primary pull-left clear-email" value="Clear" />
+    <button type="button" class="btn btn-lg btn-primary pull-left clear-email" onclick="ResetContactForm();">Reset</button>
     <button type="button" class="btn btn-lg btn-primary pull-left submit-email" style="margin-left: 15px;" onclick="SendEmail();">Send</button>
     <img class="ajax-loader" src="~/Content/images/icons/ajax-loader.gif" alt="Sending..." onload="this.width /= 2;" />
 </form>

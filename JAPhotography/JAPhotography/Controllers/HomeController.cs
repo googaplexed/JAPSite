@@ -107,5 +107,10 @@ namespace JAPhotography.Controllers
                 return PartialView("_Error");
             }
         }
+
+        public ActionResult _04302010()
+        {
+            return View();
+        }
     }
 }
