@@ -1,4 +1,7 @@
-﻿/// <reference path="C:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\Views/Home/_Error.cshtml" />
+﻿
+// Disable right click
+//document.oncontextmenu = document.body.oncontextmenu = function () { return false; }
+
 $(document).ready(function () {
 
     var bodyPadding = 55;
@@ -9,6 +12,7 @@ $(document).ready(function () {
     $(".main-content").height(screenHeight - (bodyPadding + navbarHeight + footerHeight));    
 
     $("#MainContainer").load('/Home/_Gallery', function () {
+        $('.ajax-loader').show();
         $("#thumbnail_gallery").justifiedGallery({
             rowHeight: 250,
             lastRow: 'nojustify',
@@ -43,17 +47,7 @@ $(document).ready(function () {
     $("#thumbnail_gallery a").attr("href");
 });
 
-function ShowLoadingImage()
-{
-
-}
-
-function HideLoadingImage()
-{
-
-}
-
-function AjaxError()
+function AjaxError(submissionForm)
 {
     // Improve this call's error.
 
@@ -63,27 +57,37 @@ function AjaxError()
         dataType: "html",
         data: {},
         error: function () {
-            alert('error');
+            //alert('error');
+            $("html").load("error.cshtml");
         },
         success: function (data) {
-            $('#MainContainer').html(data);
+            $('.ajax-loader').hide();
+            if (submissionForm)
+            {
+                $('.email-submission').html(data);
+                //$('.email-submission img').width($(".email-submission").width());
+            }
+            else
+            {
+                $('#MainContainer').html(data);
+            }            
         }
     });
 }
 
 function LoadGalleryPartial()
 {
-    //ShowLoadingImage();
+    $('.ajax-loader').show();
     $.ajax({
         url: '/Home/_Gallery',
         type: 'POST',
         dataType: "html",
         data: {},
         error: function () {
+            $('.ajax-loader').hide();
             AjaxError();
         },
         success: function (data) {
-            //HideLoadingImage();
             $('#MainContainer').html(data);
             $("#thumbnail_gallery").justifiedGallery({
                 rowHeight: 250,
@@ -92,23 +96,25 @@ function LoadGalleryPartial()
                 margins: 7,
                 waitThumbnailsLoad: true
             });
+            $('.ajax-loader').hide();
         }
     });
 }
 
 function LoadInvestmentPartial()
 {
-    //ShowLoadingImage();
+    $('.ajax-loader').show();
     $.ajax({
         url: '/Home/_Investment',
         type: 'POST',
         dataType: "html",
         data: {},
         error: function () {
+            $('.ajax-loader').hide();
             AjaxError();
         },
         success: function (data) {
-            //HideLoadingImage();
+            $('.ajax-loader').hide();
             $('#MainContainer').html(data);
         }
     });
@@ -116,17 +122,18 @@ function LoadInvestmentPartial()
 
 function LoadContactPartial()
 {
-    //ShowLoadingImage();
+    $('.ajax-loader').show();
     $.ajax({
         url: '/Home/_Contact',
         type: 'POST',
         dataType: "html",
         data: {},
         error: function () {
+            $('.ajax-loader').hide();
             AjaxError();
         },
         success: function (data) {
-            //HideLoadingImage();
+            $('.ajax-loader').hide();
             $('#MainContainer').html(data);
         }
     });
@@ -151,10 +158,9 @@ function SendEmail() {
             $('.ajax-loader').hide();
             $(".email-submission").html(data);
         },
-        error: function (data) {
-            alert('error!');
+        error: function (data) {            
             $('.ajax-loader').hide();
-            $(".email-submission").html('@Html.Partial("_Error")');
+            AjaxError(true);
         }
     });
 };

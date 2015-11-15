@@ -99,8 +99,8 @@ namespace JAPhotography.Controllers
                 //smtp.Send(msg);
                 msg.Dispose();
 
-                //return PartialView("_ContactSuccess");
-                return PartialView();
+                return PartialView("_ContactSuccess.cshtml");
+                //return PartialView();
             }
             catch (Exception)
             {
