@@ -73,6 +73,17 @@ footer
     height: 60px;
 }
 
+.insert-scroll
+{
+    overflow-y: auto;
+}
+
+.icon-bar
+{
+    width: 30px;
+    height: 3px;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -177,8 +188,7 @@ textarea {
 }
 
 .main-content
-{
-    overflow-y: auto;
+{    
     padding-right: 5px;
 }
 

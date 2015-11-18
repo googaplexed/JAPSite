@@ -104,7 +104,7 @@ namespace JAPhotography.Controllers
             }
             catch (Exception)
             {
-                return PartialView("_Error");
+                return PartialView("_Error.cshtml");
             }
         }
 

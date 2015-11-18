@@ -12,7 +12,8 @@ $(document).ready(function () {
     $(".main-content").height(screenHeight - (bodyPadding + navbarHeight + footerHeight));    
 
     $("#MainContainer").load('/Home/_Gallery', function () {
-        $('.ajax-loader').show();
+        //$('.ajax-loader').show();
+        $(".main-content").addClass("insert-scroll");
         $("#thumbnail_gallery").justifiedGallery({
             rowHeight: 250,
             lastRow: 'nojustify',
@@ -24,16 +25,19 @@ $(document).ready(function () {
 
     $(".gallery-link").on('click', function (e) {
         e.preventDefault();
+        $(".main-content").addClass("insert-scroll");
         LoadGalleryPartial();        
     });
 
     $(".investment-link").on('click', function (e) {
         e.preventDefault();
+        $(".main-content").removeClass("insert-scroll");
         LoadInvestmentPartial();
     });
 
     $(".contact-link").on('click', function (e) {
         e.preventDefault();
+        $(".main-content").removeClass("insert-scroll");
         LoadContactPartial();
     });
 
