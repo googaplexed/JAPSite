@@ -118,7 +118,7 @@ textarea {
 
 .navbar li
 {
-    margin-right: 60px;
+    margin-right: 55px;
 }
 
 .navbar li a
@@ -190,9 +190,10 @@ textarea {
 .main-content
 {    
     padding-right: 5px;
+    margin-bottom: 60px;
 }
 
-#MainContainer
+.email-submission
 {
-    margin-bottom: 10px;
+    margin-bottom: 70px;
 }

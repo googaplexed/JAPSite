@@ -1,13 +1,19 @@
 ﻿
+var bodyPadding = 55;
+var navbarHeight = $(".navbar").height() + 20;
+var footerHeight = 60;
+var screenHeight = $(window).height();
+
 // Disable right click
 //document.oncontextmenu = document.body.oncontextmenu = function () { return false; }
 
-$(document).ready(function () {
+$(window).resize(function () {
+    navbarHeight = $(".navbar").height() + 20;
+    screenHeight = $(window).height();
+    $(".main-content").height(screenHeight - (bodyPadding + navbarHeight + footerHeight));    
+});
 
-    var bodyPadding = 55;
-    var navbarHeight = 70;
-    var footerHeight = 60;
-    var screenHeight = $(document).height();
+$(document).ready(function () {   
 
     $(".main-content").height(screenHeight - (bodyPadding + navbarHeight + footerHeight));    
 
@@ -44,40 +50,12 @@ $(document).ready(function () {
     // Email View
 
     $(".submit-email").on('click', function (e) {
-        //e.preventDefault();
+        e.preventDefault();
         SendEmail();
     });
 
-    $("#thumbnail_gallery a").attr("href");
+    $("#thumbnail_gallery a").attr("href");    
 });
-
-function AjaxError(submissionForm)
-{
-    // Improve this call's error.
-
-    $.ajax({
-        url: '/Home/_Error',
-        type: 'POST',
-        dataType: "html",
-        data: {},
-        error: function () {
-            //alert('error');
-            $("html").load("error.cshtml");
-        },
-        success: function (data) {
-            $('.ajax-loader').hide();
-            if (submissionForm)
-            {
-                $('.email-submission').html(data);
-                //$('.email-submission img').width($(".email-submission").width());
-            }
-            else
-            {
-                $('#MainContainer').html(data);
-            }            
-        }
-    });
-}
 
 function LoadGalleryPartial()
 {
@@ -144,7 +122,6 @@ function LoadContactPartial()
 }
 
 function SendEmail() {
-    //alert('sending!');
     $('.ajax-loader').show();
     $.ajax({
         url: 'Home/_ContactSend',
@@ -158,13 +135,12 @@ function SendEmail() {
             'message': $("#message").val()
         },
         success: function (data) {
-            //alert('success!');
             $('.ajax-loader').hide();
             $(".email-submission").html(data);
         },
         error: function (data) {            
             $('.ajax-loader').hide();
-            AjaxError(true);
+            $(".email-submission").html(data);
         }
     });
 };

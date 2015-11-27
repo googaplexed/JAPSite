@@ -85,7 +85,7 @@ namespace JAPhotography.Controllers
                 smtp.Credentials = cred;
                 smtp.EnableSsl = true;
 
-                msg.From = from;
+                //msg.From = from;
                 msg.To.Add("zacdibble@hotmail.com");
                 msg.Subject = "Jenna Abbott Photography: " + subject;
                 msg.IsBodyHtml = true;
@@ -96,15 +96,14 @@ namespace JAPhotography.Controllers
                 sb.Append("<b>Message:</b> " + message);
                 msg.Body = sb.ToString();
 
-                //smtp.Send(msg);
+                smtp.Send(msg);
                 msg.Dispose();
 
-                return PartialView("_ContactSuccess.cshtml");
-                //return PartialView();
+                return PartialView("~/Views/Home/_ContactSuccess.cshtml");
             }
             catch (Exception)
             {
-                return PartialView("_Error.cshtml");
+                return PartialView("~/Views/Home/_Error.cshtml");
             }
         }
 

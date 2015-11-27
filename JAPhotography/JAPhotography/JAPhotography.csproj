@@ -198,6 +198,7 @@
     <Content Include="Content\Images\icons\fullscreen.png" />
     <Content Include="Content\Images\icons\kitten_gif.gif" />
     <Content Include="Content\Images\icons\kitten_sad_gif.gif" />
+    <Content Include="Content\Images\icons\kitten_sad_gif2.gif" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\thumbs\birdwater_thumb.jpg" />
     <Content Include="Content\Images\thumbs\IMG_0086_thumb.jpg" />
