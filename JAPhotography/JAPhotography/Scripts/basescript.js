@@ -1,5 +1,5 @@
 ﻿
-var bodyPadding = 55;
+var bodyPadding = 30;
 var navbarHeight = $(".navbar").height() + 20;
 var footerHeight = 60;
 var screenHeight = $(window).height();
