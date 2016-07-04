@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "MyProfile";
+}
+
+<style>
+    body {
+        color: black;
+    }
+</style>
+
+<h2>MyProfile</h2>
+
+<h3>Hello <b>@CurrentUser.Name!</b> How's the weather in @CurrentUser.Country today?</h3>
+
+<p>
+    <a href="@Url.Action("logout", "auth")">Logout</a>
+</p>
+

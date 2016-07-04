@@ -1,0 +1,25 @@
+﻿<script>
+    $('.ajax-loader').hide();
+</script>
+
+<form class="form-inline contact-form">
+    <div class="form-group">
+        @*<label class="control-label" for="name">Full Name</label>*@
+        <input type="text" name="name" placeholder="Name" size="80" class="form-control form-control-contact" id="name" />
+        @*<label class="control-label" for="email">Email</label>*@
+        <input type="email" name="email" placeholder="Email Address" size="80" class="form-control form-control-contact" id="email" />
+    </div>
+    <div class="email-border">
+        <div class="form-group">
+            @*<label class="control-label" for="subject">Subject</label>*@
+            <input type="text" name="subject" placeholder="Subject" size="80" class="form-control" id="subject" />
+        </div>
+        <div class="form-group">
+            @*<label class="control-label" for="message">Message</label>*@
+            <textarea type="text" name="message" placeholder="Message" size="80" class="form-control" id="message" rows="10"></textarea>
+        </div>
+    </div>
+    @*<button type="button" class="btn btn-lg pull-left clear-email" onclick="ResetContactForm();">Reset</button>*@
+    <button type="button" class="btn btn-lg submit-email">Submit</button>
+    @*<img class="ajax-loader" src="~/Content/images/icons/ajax-loader.gif" alt="Sending..." onload="this.width /= 2;" />*@
+</form>

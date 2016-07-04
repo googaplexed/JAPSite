@@ -1,31 +1,52 @@
-﻿@*<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+﻿<div class="row-fluid welcome">
+    <div class="background">
+        <div class="main-slider">
+            <div class="container">
+                <img src="~/Content/Images/watermark.png" alt="" class="logo" />
+                <h2 class="subtitle">“Photography takes an instant out of time, altering life by holding it still” - <i>Dorothea Lange</i></h2>
+                @*<div class="center">
+                    <div class="inner-center">
+                        <div class="main-btns">
+                            <a href="#" class="btn newsletter">
+                                <div class="glyphicon glyphicon-envelope"></div>
+                                Newsletter
+                            </a>
+                            <a href="#" class="btn login">
+                                <div class="glyphicon glyphicon-log-in"></div>
+                                Client Login
+                            </a>
+                        </div>
+                    </div>
+                </div>*@
+            </div>
+        </div>
+    </div>
+    <div class="down-notifier">
+        <div class="down-arrow"></div>
+        <span>Look Down</span>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>*@
+<div class="row-fluid" id="gallery">
+    @*@Html.Action("_Gallery", "Home")*@
+    @Html.Partial("~/Views/Home/_Gallery.cshtml")
+</div>
 
-<div id="MainContainer">
-    @Html.Action("_Gallery", "Home")
+<div class="row-fluid about">
+    @Html.Action("_About", "Home")
+</div>
+
+<div class="row-fluid contact">
+    @Html.Action("_Contact", "Home")
+</div>
+
+<div class="row-fluid footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-content">
+                <img src="~/Content/Images/watermark.png" alt="" class="footer-logo" />
+            </div>            
+        </div>        
+    </div>
+    <br />
 </div>

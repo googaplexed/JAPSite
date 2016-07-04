@@ -1,0 +1,162 @@
+﻿@model JAPhotography.Models.File
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>File</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PhotoName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PhotoName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Thumbnail)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Thumbnail)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Image)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FileType)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FileType)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AlbumName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AlbumName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Caption)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Caption)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Details)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Details)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Width)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Width)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Height)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Height)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FileSize)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FileSize)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DateAdded)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DateAdded)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Active)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Active)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ViewCount)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ViewCount)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Downloadable)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Downloadable)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DownloadCount)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DownloadCount)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Tags)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Tags)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Client.LastName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Client.LastName)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.File_ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

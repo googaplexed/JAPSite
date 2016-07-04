@@ -4,8 +4,8 @@ var navbarHeight = $(".navbar").height() + 20;
 var footerHeight = 60;
 var screenHeight = $(window).height();
 
-// Disable right click
-//document.oncontextmenu = document.body.oncontextmenu = function () { return false; }
+var pageSize = 10;
+var pageIndex = 0;
 
 $(window).resize(function () {
     navbarHeight = $(".navbar").height() + 20;
@@ -13,19 +13,69 @@ $(window).resize(function () {
     $(".main-content").height(screenHeight - (bodyPadding + navbarHeight + footerHeight));    
 });
 
-$(document).ready(function () {   
+$(document).ready(function () {
 
-    $(".main-content").height(screenHeight - (bodyPadding + navbarHeight + footerHeight));    
+    $(".down-arrow").click(function () {
+        scrollTo("gallery");
+    });
 
-    $("#MainContainer").load('/Home/_Gallery', function () {
+    //GetData();
+
+    //$(window).scroll(function () {
+    //    if ($(window).scrollTop() == $(document).height() - $(window).height())
+    //    {
+    //        GetData();
+    //    }
+    //});
+
+    //$(document).on("click", ".loadMoreBtn", function () {
+    //    window.location.href = window.location.href + "photos";
+    //});
+
+    //$('body').on('contextmenu', 'img', function (e) { return false; });
+
+
+    function GetData() 
+    {
+        $.ajax({
+            type: 'GET',
+            url: '/home/GetData',
+            data: { "pageIndex": pageIndex, "pageSize": pageSize },
+            dataType: 'json',
+            success: function (data) {
+                if (data != null) {
+                    for (var i = 0; i < data.length; i++)
+                    {
+                        $("#thumbnail_gallery").append("<h2>Woo! " + pageIndex + "</h2>");
+                    }
+                    pageIndex++;
+                }
+            },
+            beforeSend: function () {
+                $("#progress").show();
+            },
+            complete: function () {
+                $("#progress").hide();
+            },
+            error: function () {
+                //alert("Error while retrieving data!");
+            }
+        })
+    }
+
+
+    //$(".main-content").height(screenHeight - (bodyPadding + navbarHeight + footerHeight));    
+
+    $("#gallery").load('/Home/_Gallery', function () {
         //$('.ajax-loader').show();
-        $(".main-content").addClass("insert-scroll");
+        //$(".main-content").addClass("insert-scroll");
         $("#thumbnail_gallery").justifiedGallery({
-            rowHeight: 250,
+            rowHeight: 215,
             lastRow: 'nojustify',
             captions: false,
             margins: 7,
-            waitThumbnailsLoad: true
+            waitThumbnailsLoad: true,
+            fixedHeight: true
         });
     });
 
@@ -70,13 +120,13 @@ function LoadGalleryPartial()
             AjaxError();
         },
         success: function (data) {
-            $('#MainContainer').html(data);
+            $('#gallery').html(data);
             $("#thumbnail_gallery").justifiedGallery({
                 rowHeight: 250,
                 lastRow: 'nojustify',
                 captions: false,
                 margins: 7,
-                waitThumbnailsLoad: true
+                waitThumbnailsLoad: false
             });
             $('.ajax-loader').hide();
         }
@@ -122,7 +172,7 @@ function LoadContactPartial()
 }
 
 function SendEmail() {
-    $('.ajax-loader').show();
+    //$('.ajax-loader').show();
     $.ajax({
         url: 'Home/_ContactSend',
         type: "POST",
@@ -135,11 +185,11 @@ function SendEmail() {
             'message': $("#message").val()
         },
         success: function (data) {
-            $('.ajax-loader').hide();
+            //$('.ajax-loader').hide();
             $(".email-submission").html(data);
         },
         error: function (data) {            
-            $('.ajax-loader').hide();
+            //$('.ajax-loader').hide();
             $(".email-submission").html(data);
         }
     });
@@ -148,4 +198,12 @@ function SendEmail() {
 function ResetContactForm()
 {
     $(".form-control").val("");
+}
+
+function scrollTo(id) {
+    if (id.length) {
+        $('html, body').animate({
+            scrollTop: $("#" + id).offset().top
+        }, 'slow');
+    }
 }

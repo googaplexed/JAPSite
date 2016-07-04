@@ -17,8 +17,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -42,12 +42,51 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -116,131 +155,148 @@
     <Compile Include="App_Data\App_Start\BundleConfig.cs" />
     <Compile Include="App_Data\App_Start\FilterConfig.cs" />
     <Compile Include="App_Data\App_Start\RouteConfig.cs" />
+    <Compile Include="Classes\Fingerprint.cs" />
+    <Compile Include="Classes\Startup.cs" />
+    <Compile Include="Classes\AppDbContext.cs" />
+    <Compile Include="Classes\AppUser.cs" />
+    <Compile Include="Classes\AppUserPrincipal.cs" />
+    <Compile Include="Classes\AppViewPage.cs" />
+    <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PhotosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DirImagesModel.cs" />
+    <Compile Include="Migrations\201602160807080_InitialCreate.cs" />
+    <Compile Include="Migrations\201602160807080_InitialCreate.Designer.cs">
+      <DependentUpon>201602160807080_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603042311257_testVersion01.cs" />
+    <Compile Include="Migrations\201603042311257_testVersion01.Designer.cs">
+      <DependentUpon>201603042311257_testVersion01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AuthenticationModel.cs" />
+    <Compile Include="Models\Client.cs">
+      <DependentUpon>JAPDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClientModel.cs" />
+    <Compile Include="Models\File.cs">
+      <DependentUpon>JAPDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FileModel.cs" />
+    <Compile Include="Models\FileTypeModel.cs" />
+    <Compile Include="Models\JAPDatabase.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JAPDatabase.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JAPDatabase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JAPDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JAPDatabase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JAPDatabase.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewsletterModel.cs" />
+    <Compile Include="Models\PhotoshootPerksModel.cs" />
+    <Compile Include="Models\PhotoshootTypeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ImageHandler.cs" />
+    <Compile Include="ViewModel\ImageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Images\gallery\birdwater.jpg" />
-    <Content Include="Content\Images\gallery\logansunset.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_0086.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_0213.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_0220.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_0281.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_0321.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_0632.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_0952.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_2079.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_2460.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_2788.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_2920.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_3503.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_3615.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_3626.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_3643.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_3689.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_4078.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_4090.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_4204.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_4348.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_4369.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_4387.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_4489.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_4852 copy.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_4929.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_4952.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_4960q.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_5634.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_6154.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_6362bw.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_6441.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_6677.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_6719.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_6761.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_6768.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_6950.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_7037bw.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_7065.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_7177.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_7215.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_7961.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_7995.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_8053.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_8131.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_8235.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_8270.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_8373.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_8441.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_8472.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_8474.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_8824.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_8973.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_9041.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_9097.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_9137.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_9145.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_9406.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_9422.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_9533.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_9546.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_9554.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_9643.jpg" />
-    <Content Include="Content\Images\Go Through\IMG_9751.jpg" />
-    <Content Include="Content\Images\Go Through\Untitled-1.jpg" />
-    <Content Include="Content\Images\Go Through\vintage2.jpg" />
+    <Content Include="Content\Images\background2.png" />
+    <Content Include="Content\Images\down-arrow.png" />
+    <Content Include="Content\Images\gallery\IMG_5955.png" />
+    <Content Include="Content\Images\gallery\IMG_5990.png" />
+    <Content Include="Content\Images\gallery\IMG_6123.png" />
+    <Content Include="Content\Images\gallery\IMG_6191.png" />
+    <Content Include="Content\Images\gallery\IMG_6419.png" />
+    <Content Include="Content\Images\gallery\IMG_6531.png" />
+    <Content Include="Content\Images\gallery\IMG_6549.png" />
+    <Content Include="Content\Images\gallery\IMG_6644.png" />
+    <Content Include="Content\Images\gallery\IMG_7116.png" />
+    <Content Include="Content\Images\gallery\IMG_7177.png" />
+    <Content Include="Content\Images\gallery\IMG_7187.png" />
+    <Content Include="Content\Images\gallery\IMG_7707.png" />
+    <Content Include="Content\Images\gallery\IMG_7745.png" />
+    <Content Include="Content\Images\gallery\IMG_7787.png" />
+    <Content Include="Content\Images\gallery\IMG_7893.png" />
+    <Content Include="Content\Images\gallery\IMG_7987.png" />
+    <Content Include="Content\Images\gallery\IMG_8475.png" />
+    <Content Include="Content\Images\gallery\IMG_8719.png" />
+    <Content Include="Content\Images\gallery\IMG_8720.png" />
+    <Content Include="Content\Images\gallery\IMG_8760.png" />
+    <Content Include="Content\Images\gallery\IMG_8977.png" />
+    <Content Include="Content\Images\gallery\IMG_9071.png" />
+    <Content Include="Content\Images\gallery\IMG_9090.png" />
     <Content Include="Content\Images\icons\ajax-loader.GIF" />
+    <Content Include="Content\Images\icons\close.png" />
     <Content Include="Content\Images\icons\facebook-icon.png" />
     <Content Include="Content\Images\icons\fullscreen.png" />
     <Content Include="Content\Images\icons\kitten_gif.gif" />
     <Content Include="Content\Images\icons\kitten_sad_gif.gif" />
     <Content Include="Content\Images\icons\kitten_sad_gif2.gif" />
-    <Content Include="Content\Images\logo.png" />
-    <Content Include="Content\Images\thumbs\birdwater_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_0086_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_0213_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_0220_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_0281_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_0321_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_0632_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_0952_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_2079_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_2460_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_2788_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_2920_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_3503_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_3615_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_3626_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_3643_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_3689_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_4078_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_4090_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_4204_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_4348_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_4369_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_4387_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_4489_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_4852 copy_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_4929_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_4952_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_4960q_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_5634_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_6154_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\IMG_6362bw_thumb.jpg" />
-    <Content Include="Content\Images\thumbs\logansunset_thumb.jpg" />
+    <Content Include="Content\Images\jap_icon.ico" />
+    <Content Include="Content\Images\thumbs\IMG_5955_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_5990_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_6123_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_6191_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_6419_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_6531_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_6549_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_6644_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_7116_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_7177_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_7187_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_7707_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_7745_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_7787_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_7893_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_7987_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_8475_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_8719_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_8720_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_8760_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_8977_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_9071_thumb.png" />
+    <Content Include="Content\Images\thumbs\IMG_9090_thumb.png" />
     <Content Include="Content\Images\watermark.png" />
     <Content Include="Content\justifiedGallery.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\JAPDatabase.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JAPDatabase.edmx</DependentUpon>
+      <LastGenOutput>JAPDatabase.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\JAPDatabase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JAPDatabase.edmx</DependentUpon>
+      <LastGenOutput>JAPDatabase.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\AdminScript.js" />
     <Content Include="Scripts\basescript.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\JAPDatabase.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>JAPDatabase.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\JAPDatabase.edmx.diagram">
+      <DependentUpon>JAPDatabase.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\Arvixe.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
@@ -254,6 +310,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Popup.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -276,14 +333,39 @@
     <Content Include="Views\Home\_About.cshtml" />
     <Content Include="Views\Home\_ContactForm.cshtml" />
     <Content Include="Views\Home\_ContactSuccess.cshtml" />
+    <Content Include="Views\Home\_Popup.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Accounts\Profile.cshtml" />
+    <Content Include="Views\Accounts\Login.cshtml" />
+    <Content Include="Views\Photos\Create.cshtml" />
+    <Content Include="Views\Photos\Delete.cshtml" />
+    <Content Include="Views\Photos\Details.cshtml" />
+    <Content Include="Views\Photos\Edit.cshtml" />
+    <Content Include="Views\Photos\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201602160807080_InitialCreate.resx">
+      <DependentUpon>201602160807080_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603042311257_testVersion01.resx">
+      <DependentUpon>201603042311257_testVersion01.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Context\" />
+    <Folder Include="DAL\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Login\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,35 +1,18 @@
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\JAPhotography.dll.config
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\JAPhotography.dll
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\JAPhotography.pdb
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\Antlr3.Runtime.dll
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\Microsoft.Web.Infrastructure.dll
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\Newtonsoft.Json.dll
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\System.Web.Helpers.dll
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\System.Web.Mvc.dll
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\System.Web.Optimization.dll
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\System.Web.Razor.dll
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\System.Web.WebPages.Deployment.dll
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\System.Web.WebPages.dll
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\System.Web.WebPages.Razor.dll
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\WebGrease.dll
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\System.Web.Helpers.xml
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\System.Web.Mvc.xml
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\System.Web.Optimization.xml
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\System.Web.Razor.xml
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\System.Web.WebPages.xml
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\System.Web.WebPages.Deployment.xml
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\System.Web.WebPages.Razor.xml
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\Antlr3.Runtime.pdb
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\bin\Newtonsoft.Json.xml
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\obj\Debug\JAPhotography.dll
-c:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\obj\Debug\JAPhotography.pdb
-C:\Users\Zac\Documents\Visual Studio 2013\Projects\JAPhotography\JAPhotography\obj\Debug\JAPhotography.csprojResolveAssemblyReference.cache
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\JAPhotography.dll.config
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\JAPhotography.dll
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\JAPhotography.pdb
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Antlr3.Runtime.dll
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\EntityFramework.dll
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\EntityFramework.SqlServer.dll
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Microsoft.Owin.dll
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Microsoft.Owin.Security.dll
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Newtonsoft.Json.dll
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Owin.dll
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\System.Web.Helpers.dll
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\System.Web.Mvc.dll
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\System.Web.Optimization.dll
@@ -38,6 +21,14 @@ C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\System.Web
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\System.Web.WebPages.dll
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\System.Web.WebPages.Razor.dll
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\WebGrease.dll
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\EntityFramework.xml
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\EntityFramework.SqlServer.xml
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Microsoft.Owin.xml
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Microsoft.Owin.Security.xml
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\System.Web.Helpers.xml
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\System.Web.Mvc.xml
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\System.Web.Optimization.xml
@@ -47,32 +38,9 @@ C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\System.Web
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\System.Web.WebPages.Razor.xml
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Antlr3.Runtime.pdb
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\bin\Newtonsoft.Json.xml
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\obj\Debug\JAPhotography.csprojResolveAssemblyReference.cache
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\obj\Debug\JAPhotography.Migrations.InitialCreate.resources
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\obj\Debug\JAPhotography.Migrations.testVersion01.resources
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\obj\Debug\JAPhotography.csproj.GenerateResource.Cache
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\obj\Debug\JAPhotography.dll
 C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\obj\Debug\JAPhotography.pdb
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\JAPhotography.dll.config
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\JAPhotography.dll
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\JAPhotography.pdb
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\Antlr3.Runtime.dll
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\Newtonsoft.Json.dll
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\System.Web.Helpers.dll
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\System.Web.Mvc.dll
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\System.Web.Optimization.dll
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\System.Web.Razor.dll
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\System.Web.WebPages.dll
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\System.Web.WebPages.Razor.dll
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\WebGrease.dll
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\System.Web.Helpers.xml
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\System.Web.Mvc.xml
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\System.Web.Optimization.xml
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\System.Web.Razor.xml
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\System.Web.WebPages.xml
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\System.Web.WebPages.Razor.xml
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\Antlr3.Runtime.pdb
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\bin\Newtonsoft.Json.xml
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\obj\Debug\JAPhotography.csprojResolveAssemblyReference.cache
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\obj\Debug\JAPhotography.dll
-C:\Users\Zac\Documents\GitHub\JAPSite\JAPSite\JAPhotography\JAPhotography\obj\Debug\JAPhotography.pdb
+C:\Users\Zac\Documents\GitHub\JAPSite\JAPhotography\JAPhotography\obj\Debug\JAPhotography.csprojResolveAssemblyReference.cache

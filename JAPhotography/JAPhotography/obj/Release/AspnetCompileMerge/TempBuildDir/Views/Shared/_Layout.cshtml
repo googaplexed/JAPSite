@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:url" content="www.jennaabbottphotography.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Jenna Abbott Photography" />
+        <meta property="og:description" content="'Photography takes an instant out of time, altering life by holding it still''" />
+        <meta property="og:image" content="http://www.jennaabbottphotography.com/Content/Images/gallery/IMG_0045.jpg" />
+        <title>Jenna Abbott Photography</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="icon" href="~/Content/Images/jap_icon.ico" type="image/x-icon" />
+    </head>
+    <body>
+
+        <div>
+            @RenderBody()
+        </div> 
+
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/basescripts")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

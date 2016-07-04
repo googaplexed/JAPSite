@@ -1,0 +1,137 @@
+﻿@model IEnumerable<JAPhotography.Models.File>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PhotoName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Thumbnail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FileType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Caption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Details)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Width)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Height)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FileSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateAdded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ViewCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Downloadable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DownloadCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tags)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client.LastName)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhotoName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thumbnail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Caption)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Details)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Width)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Height)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAdded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ViewCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Downloadable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DownloadCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tags)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.LastName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.File_ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.File_ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.File_ID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

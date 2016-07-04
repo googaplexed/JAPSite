@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JAPDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Client_ID" />
+    </Key>
+    <Property Name="Client_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Files" Relationship="Self.FK__Files__Client_ID__267ABA7A" FromRole="Clients" ToRole="Files" />
+  </EntityType>
+  <EntityType Name="File">
+    <Key>
+      <PropertyRef Name="File_ID" />
+    </Key>
+    <Property Name="File_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PhotoName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Thumbnail" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="Client_ID" Type="Int32" Nullable="false" />
+    <Property Name="FileType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AlbumName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Caption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Width" Type="Int32" Nullable="false" />
+    <Property Name="Height" Type="Int32" Nullable="false" />
+    <Property Name="FileSize" Type="Int32" Nullable="false" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="ViewCount" Type="Int32" Nullable="false" />
+    <Property Name="Downloadable" Type="Boolean" Nullable="false" />
+    <Property Name="DownloadCount" Type="Int32" Nullable="false" />
+    <Property Name="Tags" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Client" Relationship="Self.FK__Files__Client_ID__267ABA7A" FromRole="Files" ToRole="Clients" />
+  </EntityType>
+  <Association Name="FK__Files__Client_ID__267ABA7A">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+    <End Role="Files" Type="Self.File" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Client_ID" />
+      </Principal>
+      <Dependent Role="Files">
+        <PropertyRef Name="Client_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="JAPDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clients" EntityType="Self.Client" />
+    <EntitySet Name="Files" EntityType="Self.File" />
+    <AssociationSet Name="FK__Files__Client_ID__267ABA7A" Association="Self.FK__Files__Client_ID__267ABA7A">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Files" EntitySet="Files" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

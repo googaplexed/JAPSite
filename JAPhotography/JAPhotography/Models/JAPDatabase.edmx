@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="JAPDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Client_ID" />
+          </Key>
+          <Property Name="Client_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Files">
+          <Key>
+            <PropertyRef Name="File_ID" />
+          </Key>
+          <Property Name="File_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PhotoName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Thumbnail" Type="varbinary(max)" Nullable="false" />
+          <Property Name="Image" Type="varbinary(max)" Nullable="false" />
+          <Property Name="Client_ID" Type="int" Nullable="false" />
+          <Property Name="FileType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AlbumName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Caption" Type="nvarchar(max)" />
+          <Property Name="Details" Type="nvarchar(max)" />
+          <Property Name="Width" Type="int" Nullable="false" />
+          <Property Name="Height" Type="int" Nullable="false" />
+          <Property Name="FileSize" Type="int" Nullable="false" />
+          <Property Name="DateAdded" Type="datetime" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="ViewCount" Type="int" Nullable="false" />
+          <Property Name="Downloadable" Type="bit" Nullable="false" />
+          <Property Name="DownloadCount" Type="int" Nullable="false" />
+          <Property Name="Tags" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK__Files__Client_ID__267ABA7A">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Files" Type="Self.Files" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Client_ID" />
+            </Principal>
+            <Dependent Role="Files">
+              <PropertyRef Name="Client_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="JAPDBModelStoreContainer">
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="web" store:Type="Tables" />
+          <EntitySet Name="Files" EntityType="Self.Files" Schema="web" store:Type="Tables" />
+          <AssociationSet Name="FK__Files__Client_ID__267ABA7A" Association="Self.FK__Files__Client_ID__267ABA7A">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Files" EntitySet="Files" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JAPDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Client_ID" />
+          </Key>
+          <Property Name="Client_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Files" Relationship="Self.FK__Files__Client_ID__267ABA7A" FromRole="Clients" ToRole="Files" />
+        </EntityType>
+        <EntityType Name="File">
+          <Key>
+            <PropertyRef Name="File_ID" />
+          </Key>
+          <Property Name="File_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PhotoName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Thumbnail" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Client_ID" Type="Int32" Nullable="false" />
+          <Property Name="FileType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AlbumName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Caption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Width" Type="Int32" Nullable="false" />
+          <Property Name="Height" Type="Int32" Nullable="false" />
+          <Property Name="FileSize" Type="Int32" Nullable="false" />
+          <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="ViewCount" Type="Int32" Nullable="false" />
+          <Property Name="Downloadable" Type="Boolean" Nullable="false" />
+          <Property Name="DownloadCount" Type="Int32" Nullable="false" />
+          <Property Name="Tags" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Client" Relationship="Self.FK__Files__Client_ID__267ABA7A" FromRole="Files" ToRole="Clients" />
+        </EntityType>
+        <Association Name="FK__Files__Client_ID__267ABA7A">
+          <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+          <End Role="Files" Type="Self.File" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Client_ID" />
+            </Principal>
+            <Dependent Role="Files">
+              <PropertyRef Name="Client_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="JAPDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clients" EntityType="Self.Client" />
+          <EntitySet Name="Files" EntityType="Self.File" />
+          <AssociationSet Name="FK__Files__Client_ID__267ABA7A" Association="Self.FK__Files__Client_ID__267ABA7A">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Files" EntitySet="Files" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="JAPDBModelStoreContainer" CdmEntityContainer="JAPDBEntities">
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="JAPDBModel.Client">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Files">
+            <EntityTypeMapping TypeName="JAPDBModel.File">
+              <MappingFragment StoreEntitySet="Files">
+                <ScalarProperty Name="File_ID" ColumnName="File_ID" />
+                <ScalarProperty Name="PhotoName" ColumnName="PhotoName" />
+                <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="AlbumName" ColumnName="AlbumName" />
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="ViewCount" ColumnName="ViewCount" />
+                <ScalarProperty Name="Downloadable" ColumnName="Downloadable" />
+                <ScalarProperty Name="DownloadCount" ColumnName="DownloadCount" />
+                <ScalarProperty Name="Tags" ColumnName="Tags" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

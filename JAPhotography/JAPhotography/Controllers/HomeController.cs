@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using JAPhotography.Models;
-using System.IO;
 using System.Net.Mail;
 using System.Net;
 using System.Text;
@@ -13,20 +8,11 @@ namespace JAPhotography.Controllers
 {
     public class HomeController : Controller
     {
-        // Get images from directories to place them on the website.
-        public DirImagesModel GetImages()
-        {
-            DirImagesModel dim = new DirImagesModel()
-            {
-                Thumbnails = Directory.EnumerateFiles(Server.MapPath("~/Content/images/thumbs")).Select(fn => "~/content/images/thumbs/" + Path.GetFileName(fn)).ToList(),
-                Images = Directory.EnumerateFiles(Server.MapPath("~/Content/images/gallery")).Select(fn => "~/Content/images/gallery/" + Path.GetFileName(fn)).ToList()
-            };
-
-            return dim;
-        }
-
         public ActionResult Index()
         {
+            Response.Cache.SetCacheability(System.Web.HttpCacheability.NoCache);
+            Response.Cache.SetExpires(DateTime.UtcNow.AddHours(-1));
+            Response.Cache.SetNoStore();
             return View();
         }
 
@@ -54,7 +40,33 @@ namespace JAPhotography.Controllers
 
         public ActionResult _Gallery()
         {
-            return PartialView(GetImages());
+            //var images = db.DbImages.Select(s => new
+            //{
+            //    s.thumbnail,
+            //    s.image,
+            //    s.width,
+            //    s.height
+            //});
+
+            //List<ImageViewModel> getImages = images.Select(item => new ImageViewModel()
+            //{
+            //    thumbnail = item.image,
+            //    image = item.image,
+            //    width = item.width,
+            //    height = item.height
+            //}).ToList();
+
+            //return PartialView(getImages);
+
+            Response.Cache.SetCacheability(System.Web.HttpCacheability.NoCache);
+            Response.Cache.SetExpires(DateTime.UtcNow.AddHours(-1));
+            Response.Cache.SetNoStore();
+            return PartialView();
+        }
+
+        public ActionResult _Popup()
+        {
+            return PartialView("~/Views/Home/_Popup.cshtml");
         }
 
         public ActionResult _About()
@@ -77,16 +89,16 @@ namespace JAPhotography.Controllers
             try
             {
                 SmtpClient smtp = new SmtpClient("smtp.live.com", 587);
-                NetworkCredential cred = new NetworkCredential("zacdibble@hotmail.com", "12R59aT10m0430ja");
+                NetworkCredential cred = new NetworkCredential("jennaabbottphotography@hotmail.com", "Autob0ts");
                 MailMessage msg = new MailMessage();
-                MailAddress from = new MailAddress("zacdibble@hotmail.com");
+                MailAddress from = new MailAddress("jennaabbottphotography@hotmail.com");
 
                 smtp.UseDefaultCredentials = false;
                 smtp.Credentials = cred;
                 smtp.EnableSsl = true;
 
-                //msg.From = from;
-                msg.To.Add("zacdibble@hotmail.com");
+                msg.From = from;
+                msg.To.Add("jennaabbottphotography@hotmail.com");
                 msg.Subject = "Jenna Abbott Photography: " + subject;
                 msg.IsBodyHtml = true;
 
@@ -105,11 +117,6 @@ namespace JAPhotography.Controllers
             {
                 return PartialView("~/Views/Home/_Error.cshtml");
             }
-        }
-
-        public ActionResult _04302010()
-        {
-            return View();
         }
     }
 }

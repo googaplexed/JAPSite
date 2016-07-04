@@ -1,8 +1,13 @@
-﻿<div class="row">
-    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 about-section" style="border: solid black 1px;">
-        @Html.Partial("_About")
+﻿<div class="container">
+    <div class="row">
+        @*<div class="about-section">
+                @Html.Partial("_About")
+            </div>*@
+        <div class="email-submission">
+            @Html.Partial("_ContactForm")
+        </div>
     </div>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 email-submission">
-        @Html.Partial("_ContactForm")
-    </div>         
+    <br />
+    <br />
+    <hr/>
 </div>

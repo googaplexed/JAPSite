@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JAPDBModelStoreContainer" CdmEntityContainer="JAPDBEntities">
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="JAPDBModel.Client">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Files">
+      <EntityTypeMapping TypeName="JAPDBModel.File">
+        <MappingFragment StoreEntitySet="Files">
+          <ScalarProperty Name="File_ID" ColumnName="File_ID" />
+          <ScalarProperty Name="PhotoName" ColumnName="PhotoName" />
+          <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="AlbumName" ColumnName="AlbumName" />
+          <ScalarProperty Name="Caption" ColumnName="Caption" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ViewCount" ColumnName="ViewCount" />
+          <ScalarProperty Name="Downloadable" ColumnName="Downloadable" />
+          <ScalarProperty Name="DownloadCount" ColumnName="DownloadCount" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
