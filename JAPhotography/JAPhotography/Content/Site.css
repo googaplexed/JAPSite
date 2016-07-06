@@ -287,15 +287,16 @@ textarea {
     position: relative;
     width: 100%;
     height: 100%;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: 121px;
+    max-width: 121px;
+    min-height: 65px;
+    min-width: 65px;
 }
 
-.social-icon
+.social-links
 {
-    float: left;
-    width: 25%;
-    height: 25%;
+    width: 121px;
+    margin: 0 auto;
 }
 
 .social-links ul
@@ -317,6 +318,22 @@ textarea {
 .social-links ul li a:hover
 {
     background-color: red;
+}
+
+.social-links ul li a img
+{
+    float: left;
+    width: 24px;
+    height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+.social-links ul li:nth-child(n+2) a img
+{
+    margin-left: 10px;
 }
 
 .signin .btn
@@ -816,47 +833,9 @@ textarea {
     font-size: 18px;
     text-align: left;
     padding: 0px 25px;
-
-    /*text-transform: uppercase;
-    font-weight: 300;
-    letter-spacing: 3px;*/
 }
 
 .about-container
 {
-    width: 50%;
+    width: 75%;
 }
-
-.about-container .about-info, .about-container .bio-image, .about-container .about-title
-{
-    border: 1px solid blue;
-}
-
-/*@media only screen and (max-device-width: 480px) {
-    .contact-form #message
-    {
-        width: 310px;
-    }
-}*/
-
-/*#thumbnail_gallery > a:nth-child(2n+1) 
-{
-    clear: none;
-    margin-left: 0;
-    left: 0;
-}
-
-@media screen and (min-width: 40em) {
-    #thumbnail_gallery > a:nth-child(4n+1) 
-    {
-        margin-right: 0;
-        right: 0;
-    }
-
-    #thumbnail_gallery > a:nth-child(2n+1) 
-    {
-        clear: none;
-        margin-left: 0;
-        left: 0;
-    }
-}*/

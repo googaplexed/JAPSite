@@ -242,6 +242,7 @@
     <Content Include="Content\Images\icons\close.png" />
     <Content Include="Content\Images\icons\facebook-icon.png" />
     <Content Include="Content\Images\icons\fullscreen.png" />
+    <Content Include="Content\Images\icons\instagram-icon.png" />
     <Content Include="Content\Images\icons\kitten_gif.gif" />
     <Content Include="Content\Images\icons\kitten_sad_gif.gif" />
     <Content Include="Content\Images\icons\kitten_sad_gif2.gif" />
