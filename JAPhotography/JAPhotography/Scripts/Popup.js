@@ -1,6 +1,10 @@
 ﻿var html = jQuery('html');
 var fadeDuration = 500;
 
+$(window).resize(function () {
+    $("#image-container").width($(".popupImage").width());
+});
+
 function OpenDimmer()
 {
     if ($(".dim").length)
